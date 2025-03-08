@@ -519,6 +519,23 @@
                 displayBuyers(searchTerm);
             });
             displayBuyers();
+
+            // Disable login button after 2 seconds
+            setTimeout(() => {
+                const loginButton = document.querySelector('a[href="./login.html"] button');
+                if (loginButton) {
+                    loginButton.disabled = true;
+                    loginButton.style.cursor = 'not-allowed';
+                }
+            }, 2000);
+
+            // Remove loading animation after 2 seconds
+            setTimeout(() => {
+                const loader = document.querySelector('.loader');
+                if (loader) {
+                    loader.style.display = 'none';
+                }
+            }, 2000);
         });
 
         const user = localStorage.getItem("uid");
