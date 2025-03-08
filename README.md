@@ -223,5 +223,5 @@ developed by teamlimitless
 Rishikesh Dhote https://github.com/rishikeshdhote29
 surabh maurya  https://github.com/saurabhmourya7294
 Vishu mishra  https://github.com/mishravishu741
-Ritik chiraman https://github.com/
-Vansh vishnoi https://github.com/Ritik-
+Ritik chiraman https://github.com/ritik-chiraman
+
