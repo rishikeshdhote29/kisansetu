@@ -1,21 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crop Purchase Agreement Form</title>
-  <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
-  <link rel="stylesheet" href="crops-page.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <title>Contract Farming Agreement</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
+      margin: 20px;
       background-color: #f2f2f2;
     }
+
+    h1,
+    h2 {
+      color: #2E8B57;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 300px;
+      padding: 10px;
+    }
+
+    nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
     form {
       background-color: #fff;
       padding: 20px;
@@ -24,203 +60,95 @@
       max-width: 600px;
       margin: auto;
     }
-    nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 15px;
-}
 
-.nav-bar {
-    border-bottom: 2px solid grey;
-}
-
-.nav-bar ul li a.active::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    /* Color for the underline */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-
-.logo {
-    width: 96px;
-}
-
-.nav-links {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    margin-top: 25px;
-    margin-left: 35px;
-    margin-bottom: 15px;
-}
-
-.nav-links li a {
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.nav-links li {
-    text-decoration: none;
-    /* Remove default underline */
-    position: relative;
-    margin-right: 30px;
-}
-
-.nav-bar .nav-links li::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: currentColor;
-    /* Uses the text color */
-    transition: width 0.3s ease;
-}
-
-.nav-bar .nav-links li:hover::after {
-    /* margin-left: 2px; */
-    width: 100%;
-    /* Expands the underline on hover */
-}
-
-    label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    input, textarea {
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    textarea {
       width: 100%;
       padding: 8px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      margin: 4px 0;
       box-sizing: border-box;
     }
-    input[readonly] {
-      background-color: #e9e9e9;
+  .nav-bar {
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+  }
+
+    input[type="text"]::placeholder,
+    input[type="number"]::placeholder,
+    input[type="date"]::placeholder,
+    textarea::placeholder {
+      color: #999;
     }
+
     button {
       background-color: #4CAF50;
       color: white;
-      padding: 10px 15px;
+      padding: 10px 20px;
       border: none;
-      border-radius: 4px;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #45a049;
     }
-    .animated-button {
-        backdrop-filter: blur(10px);
-        background-color: transparent;
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        padding: 12px 30px;
-        border: 4px solid;
-        border-color: transparent;
-        font-size: 12px;
-        border-radius: 100px;
-        font-weight: 600;
-        color: #000;
-        font: bold;
-        box-shadow: 0 0 0 2px #ffffff;
-        cursor: pointer;
-        overflow: hidden;
-        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+    #camera {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
     }
 
-    .animated-button svg {
-        position: absolute;
-        width: 24px;
-        fill: #000;
-        z-index: 9;
-        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    #video {
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid #ccc;
     }
 
-    .animated-button .arr-1 {
-        right: 16px;
+    #capture {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
 
-    .animated-button .arr-2 {
-        left: -25%;
+    #capture:hover {
+      background-color: #45a049;
+    }
+.radio-input+.radio-tile {
+    appearance: none;
+    background: transparent;
+    /* border-color: #2260ff; */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    /* color: #2260ff; */
+  }
+    #photo {
+      display: none;
+      margin-top: 10px;
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid #ccc;
     }
 
-    .animated-button .circle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 20px;
-        height: 20px;
-        background-color: #c5e5e4;
-        border-radius: 50%;
-        opacity: 0;
-        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    #signature-upload {
+      margin-top: 20px;
     }
 
-    .animated-button .text {
-        position: relative;
-        z-index: 1;
-        transform: translateX(-12px);
-        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-
-    .animated-button:hover {
-        box-shadow: 0 0 0 12px transparent;
-        color: #212121;
-        border-radius: 12px;
-    }
-
-    .animated-button:hover .arr-1 {
-        right: -25%;
-    }
-
-    .animated-button:hover .arr-2 {
-        left: 16px;
-    }
-
-    .animated-button:hover .text {
-        transform: translateX(12px);
-    }
-
-    .animated-button:hover svg {
-        fill: #1f387e;
-    }
-
-    .animated-button:active {
-        scale: 0.95;
-        box-shadow: 0 0 0 4px greenyellow;
-    }
-
-    .animated-button:hover .circle {
-        width: 220px;
-        height: 220px;
-        opacity: 1;
-    }
-
-    .button {
-        display: flex;
-        margin-top: 50px;
-        justify-content: space-between;
-        width: 220px;
+    #signature-preview {
+      display: none;
+      margin-top: 10px;
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
-<body>
 
+<body>
   <div class="header">
     <nav class="nav-bar">
       <a href="home-page.html">
@@ -229,24 +157,25 @@
       <ul class="nav-links">
         <div class="radio-inputs">
           <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='home-page.html';"
-              checked>
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='home-page.html';" />
             <span class="radio-tile">
               <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000" alt="">
+                <img src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000" alt="" />
               </span>
               <span class="radio-label">Home</span>
             </span>
           </label>
           <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='farmers-page.html';">
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='farmers-page.html';"
+              checked />
             <span class="radio-tile">
               <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000" alt="">
+                <img src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000" alt="" />
               </span>
               <span class="radio-label">Farmer</span>
             </span>
-          </label><label>
+          </label>
+          <label>
             <input class="radio-input" type="radio" name="engine" onclick="window.location.href='buyer.html';" checked />
             <span class="radio-tile">
               <span class="radio-icon">
@@ -255,36 +184,36 @@
               <span class="radio-label">Buyer</span>
             </span>
           </label>
-         
+  
           <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='crops-page.html';"
-              checked>
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='crops-page.html';" />
             <span class="radio-tile">
               <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000" alt="">
+                <img src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000" alt="" />
               </span>
               <span class="radio-label">Crops</span>
             </span>
           </label>
           <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='contract_form.html';"
-              checked>
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='contract_form.html';">
             <span class="radio-tile">
               <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000" alt="">
+                <img src="https://img.icons8.com/?size=100&id=1881&format=png&color=000000" alt="">
               </span>
               <span class="radio-label">contract</span>
             </span>
           </label>
           <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='about-us-page.html';">
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='about-us-page.html';" />
             <span class="radio-tile">
               <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=3439&format=png&color=000000" alt="">
+                <img src="https://img.icons8.com/?size=100&id=3439&format=png&color=000000" alt="" />
               </span>
               <span class="radio-label">About Us</span>
             </span>
           </label>
+  
+  
         </div>
       </ul>
       <div class="button">
@@ -323,45 +252,180 @@
       </div>
     </nav>
   </div>
-  
-  <h2>Farm Purchase Agreement Form</h2>
-  <form id="contract-form" action="/create-pdf" method="POST">
-    <label for="sellerName">Seller's Name:</label>
-    <input type="text" id="sellerName" name="sellerName" required>
 
-    <label for="sellerAddress">Seller's Address:</label>
-    <textarea id="sellerAddress" name="sellerAddress" required></textarea>
+  <h1>Contract Farming Agreement</h1>
 
-    <label for="buyerName">Buyer's Name:</label>
-    <input type="text" id="buyerName" name="buyerName" required>
+  <form id="contract-form">
+    <div class="container">
+      <div class="column">
+        <p><strong>This Contract Farming Agreement ("Agreement") is made and entered into on <input type="date"
+              name="agreementDate" required placeholder="Agreement Date">, by and between:</strong></p>
 
-    <label for="buyerAddress">Buyer's Address:</label>
-    <textarea id="buyerAddress" name="buyerAddress" required></textarea>
+        <div class="section">
+          <h2>Party A (Buyer):</h2>
+          <p>Name: <input type="text" name="buyerName" required placeholder="Buyer's Name"></p>
+          <p>Address: <input type="text" name="buyerAddress" required placeholder="Buyer's Address"></p>
+          <p>Contact Information: <input type="text" name="buyerContact" required placeholder="Buyer's Contact"></p>
+        </div>
 
-    <label for="cropDescription">Crop Description:</label>
-    <input type="text" id="cropDescription" name="cropDescription" required>
+        <div class="section">
+          <h2>Party B (Farmer):</h2>
+          <p>Name: <input type="text" name="farmerName" required placeholder="Farmer's Name"></p>
+          <p>Address: <input type="text" name="farmerAddress" required placeholder="Farmer's Address"></p>
+          <p>Contact Information: <input type="text" name="farmerContact" required placeholder="Farmer's Contact"></p>
+        </div>
 
-    <label for="quantity">Quantity (in tonnes):</label>
-    <input type="number" id="quantity" name="quantity" required oninput="calculateTotal()">
+        <div class="section">
+          <h2>1. Purpose of the Agreement</h2>
+          <p>The purpose of this Agreement is to establish the terms and conditions under which Party B agrees to
+            produce and supply agricultural produce to Party A.</p>
+        </div>
 
-    <label for="price">Price (per unit ton, in ₹):</label>
-    <input type="number" id="price" name="price" required oninput="calculateTotal()">
+        <div class="section">
+          <h2>2. Product Details</h2>
+          <p>Crop/Product: <input type="text" name="product" required placeholder="Crop/Product"></p>
+          <p>Variety: <input type="text" name="variety" required placeholder="Variety"></p>
+          <p>Quantity: <input type="number" name="quantity" required placeholder="Quantity"></p>
+          <p>Quality Standards: <textarea name="qualityStandards" required placeholder="Quality Standards"></textarea></p>
+        </div>
+      </div>
 
-    <label for="totalAmount">Total Amount (in ₹):</label>
-    <input type="number" id="totalAmount" name="totalAmount" readonly>
+      <div class="column">
+        <div class="section">
+          <h2>3. Price and Payment Terms</h2>
+          <p>Price: The agreed price for the produce shall be ₹<input type="number" name="price" required placeholder="Price"> per unit
+            (e.g., per kg, per ton).</p>
+          <p>Payment Terms: Party A agrees to pay Party B within <input type="number" name="paymentDays" required placeholder="Payment Days"> days
+            of receiving the produce. Payments shall be made via <input type="text" name="paymentMethod" required placeholder="Payment Method"></p>
+        </div>
 
-    <button type="submit">Generate PDF</button>
+        <div class="section">
+          <h2>4. Delivery Terms</h2>
+          <p>Delivery Schedule: Party B shall deliver the produce on or before <input type="date" name="deliveryDate"
+              required placeholder="Delivery Date"></p>
+          <p>Delivery Location: The produce shall be delivered to <input type="text" name="deliveryAddress" required placeholder="Delivery Address"></p>
+        </div>
+
+        <div class="section">
+          <h2>5. Input Supply and Technical Assistance</h2>
+          <p>Party A agrees to provide the following inputs to Party B: <textarea name="inputs" required placeholder="Inputs"></textarea></p>
+          <p>Party A agrees to provide technical assistance and support to ensure optimal production practices.</p>
+        </div>
+
+        <div class="section">
+          <h2>6. Quality Assurance</h2>
+          <p>Party B agrees to adhere to the quality standards specified in this Agreement.</p>
+          <p>Party A reserves the right to inspect and reject any produce that does not meet the quality standards.</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="section">
+          <h2>7. Dispute Resolution</h2>
+          <p>Any disputes arising from this Agreement shall be resolved through <input type="text"
+              name="disputeResolution" required placeholder="Dispute Resolution"></p>
+          <p>The decision of the arbitrator/mediator shall be final and binding on both parties.</p>
+        </div>
+
+        <div class="section">
+          <h2>8. Termination</h2>
+          <p>Either party may terminate this Agreement by providing <input type="number" name="terminationNotice"
+              required placeholder="Termination Notice"> days written notice.</p>
+          <p>In the event of termination, both parties shall fulfill their outstanding obligations under this Agreement.</p>
+        </div>
+
+        <div class="section">
+          <h2>9. Force Majeure</h2>
+          <p>Neither party shall be liable for any failure or delay in performing their obligations under this Agreement
+            due to unforeseen circumstances beyond their control (e.g., natural disasters, pandemics).</p>
+        </div>
+
+        <div class="section">
+          <h2>10. Governing Law</h2>
+          <p>This Agreement shall be governed by and construed in accordance with the laws of <input type="text"
+              name="governingLaw" required placeholder="Governing Law"></p>
+        </div>
+
+        <div class="section">
+          <h2>11. Miscellaneous</h2>
+          <p>This Agreement constitutes the entire understanding between the parties and supersedes all prior agreements
+            and understandings.</p>
+          <p>Any amendments to this Agreement shall be made in writing and signed by both parties.</p>
+        </div>
+
+        <div class="section">
+          <h2>Signatures</h2>
+          <p>IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the day and year first above
+            written.</p>
+          <p>Party A (Buyer):</p>
+          <p>Signature: __________________________</p>
+          <p>Name: <input type="text" name="buyerSignatureName" required placeholder="Buyer's Signature Name"></p>
+          <p>Date: <input type="date" name="buyerSignatureDate" required placeholder="Buyer's Signature Date"></p>
+          <br>
+          <p>Party B (Farmer):</p>
+          <p>Signature: __________________________</p>
+          <p>Name: <input type="text" name="farmerSignatureName" required placeholder="Farmer's Signature Name"></p>
+          <p>Date: <input type="date" name="farmerSignatureDate" required placeholder="Farmer's Signature Date"></p>
+        </div>
+
+        <div class="section">
+          <h2>Capture Live Photo</h2>
+          <div id="camera">
+            <video id="video" autoplay></video>
+            <button type="button" id="capture">Capture Photo</button>
+            <canvas id="photo"></canvas>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Upload Signature Photo</h2>
+          <input type="file" id="signature-upload" accept="image/*" required>
+          <img id="signature-preview" alt="Signature Preview">
+        </div>
+      </div>
+    </div>
+    <button type="submit">Submit</button>
   </form>
-
   <script>
-    function calculateTotal() {
-      const quantity = document.getElementById('quantity').value;
-      const price = document.getElementById('price').value;
-      const totalAmount = document.getElementById('totalAmount');
+    // Capture live photo feature
+    const video = document.getElementById('video');
+    const captureButton = document.getElementById('capture');
+    const canvas = document.getElementById('photo');
+    const context = canvas.getContext('2d');
 
-      // Calculate total amount
-      totalAmount.value = quantity && price ? quantity * price : 0;
-    }
+    // Access the device camera and stream to video element
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+      })
+      .catch(err => {
+        console.error("Error accessing the camera: ", err);
+      });
+
+    // Capture photo on button click
+    captureButton.addEventListener('click', () => {
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      canvas.style.display = 'block';
+    });
+
+    // Upload signature photo feature
+    const signatureUpload = document.getElementById('signature-upload');
+    const signaturePreview = document.getElementById('signature-preview');
+
+    signatureUpload.addEventListener('change', () => {
+      const file = signatureUpload.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          signaturePreview.src = e.target.result;
+          signaturePreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    });
   </script>
 </body>
+
 </html>
