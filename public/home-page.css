@@ -1,0 +1,461 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: "Poppins", sans-serif; */
+  box-sizing: border-box;
+}
+
+.radio-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radio-inputs>* {
+  margin: 6px;
+}
+
+.radio-input:checked+.radio-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #2260ff;
+}
+
+.radio-input:checked+.radio-tile:before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: #2260ff;
+  border-color: #2260ff;
+}
+
+.radio-input:checked+.radio-tile .radio-icon svg {
+  fill: #2260ff;
+}
+
+.radio-input:checked+.radio-tile .radio-label {
+  color: #2260ff;
+}
+
+.radio-input:focus+.radio-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.radio-input:focus+.radio-tile:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  min-height: 80px;
+  border-radius: 0.5rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio-tile:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 0.25rem;
+  left: 0.25rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
+}
+
+.radio-tile:hover {
+  border-color: #2260ff;
+}
+
+.radio-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.radio-icon img {
+  width: 2rem;
+  height: 2rem;
+  fill: #494949;
+}
+
+.radio-label {
+  color: #707070;
+  transition: 0.375s ease;
+  text-align: center;
+  font-size: 13px;
+}
+
+.radio-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.buttons a {
+  text-decoration: none;
+  /* Remove underline */
+  color: inherit;
+  /* Inherit color from the button */
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+
+/* .nav-bar ul li a:hover,
+.nav-bar ul li a.active {
+    color: #007bff; 
+} */
+
+.nav-bar ul li a.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  /* Color for the underline */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.logo {
+  width: 96px;
+  margin-top: 10px;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  margin-left: 35px;
+  margin-bottom: 15px;
+}
+
+.nav-links li a {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li {
+  text-decoration: none;
+  /* Remove default underline */
+  position: relative;
+  margin-right: 30px;
+}
+
+.nav-bar .nav-links li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  /* Uses the text color */
+  transition: width 0.3s ease;
+}
+
+.nav-bar .nav-links li:hover::after {
+  /* margin-left: 2px; */
+  width: 100%;
+  /* Expands the underline on hover */
+}
+
+.buttons {
+  margin-top: 48px;
+  margin-right: 20px;
+}
+
+.buttons button {
+  margin-right: 15px;
+  border: none;
+  width: 75px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.buttons button:last-child {
+  margin-right: 0;
+}
+
+.buttons button:first-child {
+  background-color: #4caf50;
+  /* Green for Sign Up */
+  color: white;
+}
+
+.buttons button:last-child {
+  background-color: #2196f3;
+  /* Blue for Login */
+  color: white;
+}
+
+.buttons button:hover {
+  transform: scale(1.05);
+  /* Slightly enlarges the button */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  /* Adds shadow for a pop effect */
+}
+
+.buttons button:first-child:hover {
+  background-color: #45a049;
+  /* Darker green on hover */
+}
+
+.buttons button:last-child:hover {
+  background-color: #1e88e5;
+  /* Darker blue on hover */
+}
+
+/* page 1 */
+.page-1 {
+  min-height: 100vh;
+  width: 100%;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/banner.avif); */
+  background-position: center;
+  background-size: cover;
+  padding: 5% 7%;
+  position: relative;
+}
+
+.page-1 h1 {
+  font-size: 50px;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 15px;
+}
+
+.page-1 p {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin-right: 90px;
+  margin-bottom: 120px;
+}
+
+.redirect-links {
+  margin-top: 50px;
+}
+
+.redirect-links>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.redirect-links h3 {
+  font-family: "Merriweather", serif;
+  font-size: 24px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.redirect-links button {
+  width: 600px;
+  height: 500px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  background-color: #28a745;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+
+.redirect-links button:hover {
+  background-color: #218838;
+}
+
+.button-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  /* Initially hidden */
+  object-fit: cover;
+  /* Ensure video covers the button */
+  z-index: 1;
+}
+
+.redirect-links button:hover .button-video {
+  display: block;
+  /* Show video on hover */
+}
+
+/* Optional styling for a better user experience */
+.button-video:hover {
+  play: true;
+  display: block;
+}
+
+.bot-logo img {
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* styles for ai-bot */
+.ai-bot {
+  display: none;
+}
+
+#bot-img {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  border-radius: 10px;
+  border-radius: 10px;
+  filter: invert(20%) sepia(60%) saturate(300%) hue-rotate(85deg) brightness(80%) contrast(100%);
+  backdrop-filter: blur(8px);
+}
+
+#bot-img:hover {
+  /* Darker effect on hover with slight color shift */
+  filter: invert(30%) sepia(70%) saturate(400%) hue-rotate(95deg) brightness(75%) contrast(105%);
+}
+
+.lang-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.chat-container {
+  position: fixed;
+  right: 20px;
+  top: 90px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: 35vw;
+  min-height: 70vh;
+  background-color: #212936;
+  border: 1px solid rgb(234, 234, 236);
+  border-radius: 32px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.message-element {
+  color: white;
+}
+
+.user-prompt {
+  display: flex;
+  padding: 0 8px;
+  margin: 12px;
+  background-color: #c1cad6;
+  border-radius: 16px;
+}
+
+#chat-messages {
+  max-height: 58vh;
+  overflow-y: scroll;
+  padding: 16px 16px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+textarea {
+  flex-grow: 1;
+  font-size: 16px;
+  background-color: transparent;
+  border: 0;
+  margin: 16px;
+  resize: none;
+  /* border-radius: 16px; */
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.enter-icon {
+  fill: #999;
+  cursor: pointer;
+  margin: 16px;
+}
+
+/* styles for crop btns */
+.crop-btn {
+  /* background-color: #4caf50; */
+  background-image: url(./images/buy-crops.png);
+  width: 900px;
+  height: 500px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: none;
+}
+
+.crop-btn:hover {
+  transform: translateY(-5px);
+  /* background-color: #45a049; */
+}
+
+.farmer-btn {
+  /* background-color: #8b4513; */
+  background-image: url(./images/buy-from-farmer.png);
+  font-weight: 600;
+  width: 900px;
+  height: 500px;
+  margin-bottom: 20px;
+}
+
+.farmer-btn:hover {
+  transform: translateY(-5px);
+  /* background-color: #7b3d11; */
+}
+
+.about-btn {
+  background-image: url(./images/about-us.png);
+  /* background-color: #2196f3; */
+  width: 900px;
+  height: 500px;
+  margin-bottom: 20px;
+}
+
+.about-btn:hover {
+  transform: translateY(-5px);
+  /* background-color: #1e88e5; */
+}

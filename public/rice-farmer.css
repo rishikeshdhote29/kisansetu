@@ -1,0 +1,746 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.radio-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 350px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.radio-inputs>* {
+    margin: 6px;
+}
+
+.radio-input:checked+.radio-tile {
+    border-color: #2260ff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #2260ff;
+}
+
+.radio-input:checked+.radio-tile:before {
+    transform: scale(1);
+    opacity: 1;
+    background-color: #2260ff;
+    border-color: #2260ff;
+}
+
+.radio-input:checked+.radio-tile .radio-icon svg {
+    fill: #2260ff;
+}
+
+.radio-input:checked+.radio-tile .radio-label {
+    color: #2260ff;
+}
+
+.radio-input:focus+.radio-tile {
+    border-color: #2260ff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.radio-input:focus+.radio-tile:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    min-height: 80px;
+    border-radius: 0.5rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.15s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-tile:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 0.25rem;
+    left: 0.25rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.25s ease;
+}
+
+.radio-tile:hover {
+    border-color: #2260ff;
+}
+
+.radio-tile:hover:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio-icon img {
+    width: 2rem;
+    height: 2rem;
+    fill: #494949;
+}
+
+.radio-label {
+    color: #707070;
+    transition: 0.375s ease;
+    text-align: center;
+    font-size: 13px;
+}
+
+.radio-input {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.nav-bar {
+    border-bottom: 2px solid grey;
+}
+
+/* .nav-bar ul li a:hover,
+.nav-bar ul li a.active {
+    color: #007bff; 
+} */
+
+.nav-bar ul li a.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    /* Color for the underline */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.logo {
+    width: 96px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    margin-left: 35px;
+    margin-bottom: 15px;
+}
+
+
+.nav-links li a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li {
+    text-decoration: none;
+    /* Remove default underline */
+    position: relative;
+    margin-right: 30px;
+}
+
+.nav-bar .nav-links li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    /* Uses the text color */
+    transition: width 0.3s ease;
+}
+
+.nav-bar .nav-links li:hover::after {
+    /* margin-left: 2px; */
+    width: 100%;
+    /* Expands the underline on hover */
+}
+
+.buttons {
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.buttons button {
+    margin-right: 15px;
+    border: none;
+    width: 75px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.buttons button:last-child {
+    margin-right: 0;
+}
+
+.buttons button:first-child {
+    background-color: #4CAF50;
+    /* Green for Sign Up */
+    color: white;
+}
+
+.buttons button:last-child {
+    background-color: #2196F3;
+    /* Blue for Login */
+    color: white;
+}
+
+.buttons button:hover {
+    transform: scale(1.05);
+    /* Slightly enlarges the button */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    /* Adds shadow for a pop effect */
+}
+
+.buttons button:first-child:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+}
+
+.buttons button:last-child:hover {
+    background-color: #1e88e5;
+    /* Darker blue on hover */
+}
+
+
+/* page 1 */
+.page-1 {
+    min-height: 100vh;
+    width: 100%;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/banner.avif); */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),
+        url(/kisansetu/public/images/banner.avif);
+    background-position: center;
+    background-size: cover;
+    padding: 10% 7%;
+}
+
+.page-1 h1 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+}
+
+.page-1 p {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+}
+
+.page-1 p {
+    font-size: 18px;
+    margin-right: 90px;
+    margin-bottom: 120px;
+}
+
+.redirect-links {
+    margin-top: 50px;
+}
+
+.redirect-links h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.redirect-links button {
+    /* font-family: 'Playfair Display', serif; */
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 7px;
+    color: white;
+    font-size: 16px;
+    margin-right: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 60px;
+}
+
+.crop-btn {
+    background-color: #4CAF50;
+}
+
+.crop-btn:hover {
+    transform: translateY(-5px);
+    background-color: #45a049;
+}
+
+.farmer-btn {
+    background-color: #8B4513;
+}
+
+.farmer-btn:hover {
+    transform: translateY(-5px);
+    background-color: #7B3D11;
+}
+
+.about-btn {
+    background-color: #2196F3;
+}
+
+.about-btn:hover {
+    transform: translateY(-5px);
+    background-color: #1E88E5;
+}
+
+/* Farmers Table */
+/* body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+} */
+
+.back-button {
+    margin-top: 40px;
+    margin-right: 30px;
+    height: 50px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+}
+
+.back-button:active {
+    background-color: #d0d0d0;
+    border-color: #bbb;
+}
+
+.top-page {
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    width: 85%;
+    /* Set the table width to 85% of its container */
+    margin: 0 auto;
+    /* Center the table horizontally */
+    border-collapse: collapse;
+}
+
+/* Centering images in the first column of the table */
+table tbody td:first-child {
+    text-align: center;
+}
+
+table tbody td:first-child img {
+    display: block;
+    margin: 0 auto;
+}
+
+table thead tr th {
+    text-align: center;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+a {
+    color: #000;
+    /* color: #007BFF; */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+tr td img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+table tbody td img {
+    display: block;
+    margin: 0 auto;
+    /* Center images */
+}
+
+.farmers-list {
+    padding: 20px;
+}
+
+.farmers-list h1 {
+    margin-left: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Search input styling */
+.search-container {
+    margin-left: auto;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#searchBar {
+    width: 250px;
+    padding: 8px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#searchBar:focus {
+    border-color: #007BFF; /* Blue border on focus */
+    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+#searchBar::placeholder {
+    color: #888;
+    font-size: 14px;
+}
+
+.navigation-container{
+    display: flex;
+    gap: 2rem;
+}
+
+.back-button {
+    margin-right: 30px;
+    height: 50px;
+    background: #33cc00; /* Electric Green background */
+    color: white;
+    font-family: inherit;
+    padding: 0.45em;
+    padding-left: 1em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1em -0.3em #00b300; /* Reduced shadow intensity */
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 1em;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.back-button:hover {
+    background-color: #33cc00; /* Slightly darker Electric Green on hover */
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.1em 0.1em #009900; /* Subtle shadow on hover */
+}
+
+.back-button:active {
+    background-color: #28a700; /* Even darker Electric Green when clicked */
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em #007700; /* Subtle shadow when clicked */
+}
+
+/* From Uiverse.io by LightAndy1 */ 
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 190px;
+}
+
+.input {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 45px;
+    padding-left: 2.5rem;
+    box-shadow: 0 0 0 1.5px #e0e0e0, 0 0 25px -17px #f0f0f0;
+    border: 0;
+    border-radius: 12px;
+    background-color: #ffffff;
+    outline: none;
+    color: #333333;
+    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: text;
+    z-index: 0;
+}
+
+.input::placeholder {
+    color: #666666;
+}
+
+.input:hover {
+    box-shadow: 0 0 0 2.5px #d0d0d0, 0px 0px 25px -15px #f0f0f0;
+}
+
+.input:active {
+    transform: scale(0.95);
+}
+
+.input:focus {
+    box-shadow: 0 0 0 2.5px #d0d0d0;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    fill: #666666;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* From Uiverse.io by Nawsome */ 
+.boxes {
+    --size: 32px;
+    --duration: 800ms;
+    height: calc(var(--size) * 2);
+    width: calc(var(--size) * 3);
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+    margin-top: calc(var(--size) * 1.5 * -1);
+    transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+  }
+  
+  .boxes .box {
+    width: var(--size);
+    height: var(--size);
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+  
+  .boxes .box:nth-child(1) {
+    transform: translate(100%, 0);
+    -webkit-animation: box1 var(--duration) linear infinite;
+    animation: box1 var(--duration) linear infinite;
+  }
+  
+  .boxes .box:nth-child(2) {
+    transform: translate(0, 100%);
+    -webkit-animation: box2 var(--duration) linear infinite;
+    animation: box2 var(--duration) linear infinite;
+  }
+  
+  .boxes .box:nth-child(3) {
+    transform: translate(100%, 100%);
+    -webkit-animation: box3 var(--duration) linear infinite;
+    animation: box3 var(--duration) linear infinite;
+  }
+  
+  .boxes .box:nth-child(4) {
+    transform: translate(200%, 0);
+    -webkit-animation: box4 var(--duration) linear infinite;
+    animation: box4 var(--duration) linear infinite;
+  }
+  
+  .boxes .box > div {
+    --background: #5C8DF6;
+    --top: auto;
+    --right: auto;
+    --bottom: auto;
+    --left: auto;
+    --translateZ: calc(var(--size) / 2);
+    --rotateY: 0deg;
+    --rotateX: 0deg;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    top: var(--top);
+    right: var(--right);
+    bottom: var(--bottom);
+    left: var(--left);
+    transform: rotateY(var(--rotateY)) rotateX(var(--rotateX)) translateZ(var(--translateZ));
+  }
+  
+  .boxes .box > div:nth-child(1) {
+    --top: 0;
+    --left: 0;
+  }
+  
+  .boxes .box > div:nth-child(2) {
+    --background: #145af2;
+    --right: 0;
+    --rotateY: 90deg;
+  }
+  
+  .boxes .box > div:nth-child(3) {
+    --background: #447cf5;
+    --rotateX: -90deg;
+  }
+  
+  .boxes .box > div:nth-child(4) {
+    --background: #DBE3F4;
+    --top: 0;
+    --left: 0;
+    --translateZ: calc(var(--size) * 3 * -1);
+  }
+  
+  @-webkit-keyframes box1 {
+    0%, 50% {
+      transform: translate(100%, 0);
+    }
+  
+    100% {
+      transform: translate(200%, 0);
+    }
+  }
+  
+  @keyframes box1 {
+    0%, 50% {
+      transform: translate(100%, 0);
+    }
+  
+    100% {
+      transform: translate(200%, 0);
+    }
+  }
+  
+  @-webkit-keyframes box2 {
+    0% {
+      transform: translate(0, 100%);
+    }
+  
+    50% {
+      transform: translate(0, 0);
+    }
+  
+    100% {
+      transform: translate(100%, 0);
+    }
+  }
+  
+  @keyframes box2 {
+    0% {
+      transform: translate(0, 100%);
+    }
+  
+    50% {
+      transform: translate(0, 0);
+    }
+  
+    100% {
+      transform: translate(100%, 0);
+    }
+  }
+  
+  @-webkit-keyframes box3 {
+    0%, 50% {
+      transform: translate(100%, 100%);
+    }
+  
+    100% {
+      transform: translate(0, 100%);
+    }
+  }
+  
+  @keyframes box3 {
+    0%, 50% {
+      transform: translate(100%, 100%);
+    }
+  
+    100% {
+      transform: translate(0, 100%);
+    }
+  }
+  
+  @-webkit-keyframes box4 {
+    0% {
+      transform: translate(200%, 0);
+    }
+  
+    50% {
+      transform: translate(200%, 100%);
+    }
+  
+    100% {
+      transform: translate(100%, 100%);
+    }
+  }
+  
+  @keyframes box4 {
+    0% {
+      transform: translate(200%, 0);
+    }
+  
+    50% {
+      transform: translate(200%, 100%);
+    }
+  
+    100% {
+      transform: translate(100%, 100%);
+    }
+  }
+
+  .loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loader .boxes{
+    margin-top: 7rem;
+  }
