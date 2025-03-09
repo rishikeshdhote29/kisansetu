@@ -90,6 +90,58 @@
         button:hover {
             background-color: #45a049;
         }
+
+        #camera {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #video,
+        #photo {
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+        }
+
+        #capture {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #capture:hover {
+            background-color: #45a049;
+        }
+
+        #photo {
+            display: none;
+            margin-top: 10px;
+        }
+
+        #signature-upload {
+            margin-top: 20px;
+        }
+ body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url('/public/images/bg.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: black;
+        }
+        #signature-preview {
+            display: none;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 
@@ -178,193 +230,201 @@
     <h1>Contract Farming Agreement</h1>
 
     <form id="contract-form">
-        <form id="contract-form">
-            <div class="container">
-                <div class="column">
-                    <p><strong>This Contract Farming Agreement ("Agreement") is made and entered into on <input type="date"
-                                name="agreementDate" required placeholder="Agreement Date">, by and between:</strong></p>
-        
-                    <div class="section">
-                        <h2>Party A (Buyer):</h2>
-                        <p>Name: <input type="text" name="buyerName" required placeholder="Buyer's Name"></p>
-                        <p>Address: <input type="text" name="buyerAddress" required placeholder="Buyer's Address"></p>
-                        <p>Contact Information: <input type="text" name="buyerContact" required placeholder="Buyer's Contact">
-                        </p>
-                    </div>
-        
-                    <div class="section">
-                        <h2>Party B (Farmer):</h2>
-                        <p>Name: <input type="text" name="farmerName" required placeholder="Farmer's Name"></p>
-                        <p>Address: <input type="text" name="farmerAddress" required placeholder="Farmer's Address"></p>
-                        <p>Contact Information: <input type="text" name="farmerContact" required placeholder="Farmer's Contact">
-                        </p>
-                    </div>
-        
-                    <div class="section">
-                        <h2>1. Purpose of the Agreement</h2>
-                        <p>The purpose of this Agreement is to establish the terms and conditions under which Party B agrees to
-                            produce and supply agricultural produce to Party A.</p>
-                    </div>
-        
-                    <div class="section">
-                        <h2>2. Product Details</h2>
-                        <p>Crop/Product: <input type="text" name="product" required placeholder="Crop/Product"></p>
-                        <p>Variety: <input type="text" name="variety" required placeholder="Variety"></p>
-                        <p>Quantity: <input type="number" name="quantity" required placeholder="Quantity"></p>
-                        <p>Quality Standards: <textarea name="qualityStandards" required
-                                placeholder="Quality Standards"></textarea></p>
-                    </div>
+        <div class="container">
+            <div class="column">
+                <p><strong>This Contract Farming Agreement ("Agreement") is made and entered into on <input type="date"
+                            name="agreementDate" required placeholder="Agreement Date">, by and between:</strong></p>
+
+                <div class="section">
+                    <h2>Party A (Buyer):</h2>
+                    <p>Name: <input type="text" name="buyerName" required placeholder="Buyer's Name"></p>
+                    <p>Address: <input type="text" name="buyerAddress" required placeholder="Buyer's Address"></p>
+                    <p>Contact Information: <input type="text" name="buyerContact" required
+                            placeholder="Buyer's Contact">
+                    </p>
                 </div>
-        
-                <div class="column">
-                    <div class="section">
-                        <h2>3. Price and Payment Terms</h2>
-                        <p>Price: The agreed price for the produce shall be ₹<input type="number" name="price" required
-                                placeholder="Price"> per unit
-                            (e.g., per kg, per ton).</p>
-                        <p>Payment Terms: Party A agrees to pay Party B within <input type="number" name="paymentDays" required
-                                placeholder="Payment Days"> days
-                            of receiving the produce. Payments shall be made via <input type="text" name="paymentMethod"
-                                required placeholder="Payment Method"></p>
-                    </div>
-        
-                    <div class="section">
-                        <h2>4. Delivery Terms</h2>
-                        <p>Delivery Schedule: Party B shall deliver the produce on or before <input type="date"
-                                name="deliveryDate" required placeholder="Delivery Date"></p>
-                        <p>Delivery Location: The produce shall be delivered to <input type="text" name="deliveryAddress"
-                                required placeholder="Delivery Address"></p>
-                    </div>
-        
-                    <div class="section">
-                        <h2>5. Input Supply and Technical Assistance</h2>
-                        <p>Party A agrees to provide the following inputs to Party B: <textarea name="inputs" required
-                                placeholder="Inputs"></textarea></p>
-                        <p>Party A agrees to provide technical assistance and support to ensure optimal production practices.
-                        </p>
-                    </div>
-        
-                    <div class="section">
-                        <h2>6. Quality Assurance</h2>
-                        <p>Party B agrees to adhere to the quality standards specified in this Agreement.</p>
-                        <p>Party A reserves the right to inspect and reject any produce that does not meet the quality
-                            standards.</p>
-                    </div>
+
+                <div class="section">
+                    <h2>Party B (Farmer):</h2>
+                    <p>Name: <input type="text" name="farmerName" required placeholder="Farmer's Name"></p>
+                    <p>Address: <input type="text" name="farmerAddress" required placeholder="Farmer's Address"></p>
+                    <p>Contact Information: <input type="text" name="farmerContact" required
+                            placeholder="Farmer's Contact">
+                    </p>
                 </div>
-        
-                <div class="column">
-                    <div class="section">
-                        <h2>7. Dispute Resolution</h2>
-                        <p>Any disputes arising from this Agreement shall be resolved through <input type="text"
-                                name="disputeResolution" required placeholder="Dispute Resolution"></p>
-                        <p>The decision of the arbitrator/mediator shall be final and binding on both parties.</p>
-                    </div>
-        
-                    <div class="section">
-                        <h2>8. Termination</h2>
-                        <p>Either party may terminate this Agreement by providing <input type="number" name="terminationNotice"
-                                required placeholder="Termination Notice"> days written notice.</p>
-                        <p>In the event of termination, both parties shall fulfill their outstanding obligations under this
-                            Agreement.</p>
-                    </div>
-        
-                    <div class="section">
-                        <h2>9. Force Majeure</h2>
-                        <p>Neither party shall be liable for any failure or delay in performing their obligations under this
-                            Agreement
-                            due to unforeseen circumstances beyond their control (e.g., natural disasters, pandemics).</p>
-                    </div>
-        
-                    <div class="section">
-                        <h2>10. Governing Law</h2>
-                        <p>This Agreement shall be governed by and construed in accordance with the laws of <input type="text"
-                                name="governingLaw" required placeholder="Governing Law"></p>
-                    </div>
-        
-                    <div class="section">
-                        <h2>11. Miscellaneous</h2>
-                        <p>This Agreement constitutes the entire understanding between the parties and supersedes all prior
-                            agreements
-                            and understandings.</p>
-                        <p>Any amendments to this Agreement shall be made in writing and signed by both parties.</p>
-                    </div>
-        
-                    <div class="section">
-                        <h2>Signatures</h2>
-                        <p>IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the day and year first
-                            above
-                            written.</p>
-                        <p>Party A (Buyer):</p>
-                        <p>Signature: __________________________</p>
-                        <p>Name: <input type="text" name="buyerSignatureName" required placeholder="Buyer's Signature Name"></p>
-                        <p>Date: <input type="date" name="buyerSignatureDate" required placeholder="Buyer's Signature Date"></p>
-                        <br>
-                        <p>Party B (Farmer):</p>
-                        <p>Signature: __________________________</p>
-                        <p>Name: <input type="text" name="farmerSignatureName" required placeholder="Farmer's Signature Name">
-                        </p>
-                        <p>Date: <input type="date" name="farmerSignatureDate" required placeholder="Farmer's Signature Date">
-                        </p>
-                    </div>
-        
-                    <div class="section">
-                        <h2>Capture Live Photo</h2>
-                        <div id="camera">
-                            <video id="video" autoplay></video>
-                            <button type="button" id="capture">Capture Photo</button>
-                            <canvas id="photo"></canvas>
-                        </div>
-                    </div>
-        
-                    <div class="section">
-                        <h2>Upload Signature Photo</h2>
-                        <input type="file" id="signature-upload" accept="image/*" required>
-                        <img id="signature-preview" alt="Signature Preview">
-                    </div>
+
+                <div class="section">
+                    <h2>1. Purpose of the Agreement</h2>
+                    <p>The purpose of this Agreement is to establish the terms and conditions under which Party B agrees
+                        to
+                        produce and supply agricultural produce to Party A.</p>
+                </div>
+
+                <div class="section">
+                    <h2>2. Product Details</h2>
+                    <p>Crop/Product: <input type="text" name="product" required placeholder="Crop/Product"></p>
+                    <p>Variety: <input type="text" name="variety" required placeholder="Variety"></p>
+                    <p>Quantity: <input type="number" name="quantity" required placeholder="Quantity"></p>
+                    <p>Quality Standards: <textarea name="qualityStandards" required
+                            placeholder="Quality Standards"></textarea>
+                    </p>
                 </div>
             </div>
-            <button type="submit">Submit</button>
-        </form>
-        <script>
-            // Capture live photo feature
-            const video = document.getElementById('video');
-            const captureButton = document.getElementById('capture');
-            const canvas = document.getElementById('photo');
-            const context = canvas.getContext('2d');
 
-            // Access the device camera and stream to video element
-            navigator.mediaDevices.getUserMedia({ video: true })
-                .then(stream => {
-                    video.srcObject = stream;
-                })
-                .catch(err => {
-                    console.error("Error accessing the camera: ", err);
-                });
+            <div class="column">
+                <div class="section">
+                    <h2>3. Price and Payment Terms</h2>
+                    <p>Price: The agreed price for the produce shall be ₹<input type="number" name="price" required
+                            placeholder="Price"> per unit
+                        (e.g., per kg, per ton).</p>
+                    <p>Payment Terms: Party A agrees to pay Party B within <input type="number" name="paymentDays"
+                            required placeholder="Payment Days"> days
+                        of receiving the produce. Payments shall be made via <input type="text" name="paymentMethod"
+                            required placeholder="Payment Method"></p>
+                </div>
 
-            // Capture photo on button click
-            captureButton.addEventListener('click', () => {
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                context.drawImage(video, 0, 0, canvas.width, canvas.height);
-                canvas.style.display = 'block';
+                <div class="section">
+                    <h2>4. Delivery Terms</h2>
+                    <p>Delivery Schedule: Party B shall deliver the produce on or before <input type="date"
+                            name="deliveryDate" required placeholder="Delivery Date"></p>
+                    <p>Delivery Location: The produce shall be delivered to <input type="text" name="deliveryAddress"
+                            required placeholder="Delivery Address"></p>
+                </div>
+
+                <div class="section">
+                    <h2>5. Input Supply and Technical Assistance</h2>
+                    <p>Party A agrees to provide the following inputs to Party B: <textarea name="inputs" required
+                            placeholder="Inputs"></textarea></p>
+                    <p>Party A agrees to provide technical assistance and support to ensure optimal production
+                        practices.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2>6. Quality Assurance</h2>
+                    <p>Party B agrees to adhere to the quality standards specified in this Agreement.</p>
+                    <p>Party A reserves the right to inspect and reject any produce that does not meet the quality
+                        standards.</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="section">
+                    <h2>7. Dispute Resolution</h2>
+                    <p>Any disputes arising from this Agreement shall be resolved through <input type="text"
+                            name="disputeResolution" required placeholder="Dispute Resolution"></p>
+                    <p>The decision of the arbitrator/mediator shall be final and binding on both parties.</p>
+                </div>
+
+                <div class="section">
+                    <h2>8. Termination</h2>
+                    <p>Either party may terminate this Agreement by providing <input type="number"
+                            name="terminationNotice" required placeholder="Termination Notice"> days written notice.</p>
+                    <p>In the event of termination, both parties shall fulfill their outstanding obligations under this
+                        Agreement.</p>
+                </div>
+
+                <div class="section">
+                    <h2>9. Force Majeure</h2>
+                    <p>Neither party shall be liable for any failure or delay in performing their obligations under this
+                        Agreement
+                        due to unforeseen circumstances beyond their control (e.g., natural disasters, pandemics).</p>
+                </div>
+
+                <div class="section">
+                    <h2>10. Governing Law</h2>
+                    <p>This Agreement shall be governed by and construed in accordance with the laws of <input
+                            type="text" name="governingLaw" required placeholder="Governing Law"></p>
+                </div>
+
+                <div class="section">
+                    <h2>11. Miscellaneous</h2>
+                    <p>This Agreement constitutes the entire understanding between the parties and supersedes all prior
+                        agreements
+                        and understandings.</p>
+                    <p>Any amendments to this Agreement shall be made in writing and signed by both parties.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Signatures</h2>
+                    <p>IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the day and year first
+                        above
+                        written.</p>
+                    <p>Party A (Buyer):</p>
+                    <p>Signature: __________________________</p>
+                    <p>Name: <input type="text" name="buyerSignatureName" required placeholder="Buyer's Signature Name">
+                    </p>
+                    <p>Date: <input type="date" name="buyerSignatureDate" required placeholder="Buyer's Signature Date">
+                    </p>
+                    <br>
+                    <p>Party B (Farmer):</p>
+                    <p>Signature: __________________________</p>
+                    <p>Name: <input type="text" name="farmerSignatureName" required
+                            placeholder="Farmer's Signature Name">
+                    </p>
+                    <p>Date: <input type="date" name="farmerSignatureDate" required
+                            placeholder="Farmer's Signature Date">
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2>Capture Live Photo</h2>
+                    <div id="camera">
+                        <video id="video" autoplay></video>
+                        <button type="button" id="capture">Capture Photo</button>
+                        <canvas id="photo"></canvas>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Upload Signature Photo</h2>
+                    <input type="file" id="signature-upload" accept="image/*" required>
+                    <img id="signature-preview" alt="Signature Preview">
+                </div>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        // Capture live photo feature
+        const video = document.getElementById('video');
+        const captureButton = document.getElementById('capture');
+        const canvas = document.getElementById('photo');
+        const context = canvas.getContext('2d');
+
+        // Access the device camera and stream to video element
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error("Error accessing the camera: ", err);
             });
 
-            // Upload signature photo feature
-            const signatureUpload = document.getElementById('signature-upload');
-            const signaturePreview = document.getElementById('signature-preview');
+        // Capture photo on button click
+        captureButton.addEventListener('click', () => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            canvas.style.display = 'block';
+        });
 
-            signatureUpload.addEventListener('change', () => {
-                const file = signatureUpload.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        signaturePreview.src = e.target.result;
-                        signaturePreview.style.display = 'block';
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-        </script>
+        // Upload signature photo feature
+        const signatureUpload = document.getElementById('signature-upload');
+        const signaturePreview = document.getElementById('signature-preview');
+
+        signatureUpload.addEventListener('change', () => {
+            const file = signatureUpload.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    signaturePreview.src = e.target.result;
+                    signaturePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 
     <footer>
         <p>&copy; 2024 KisanSetu. All Rights Reserved.</p>
