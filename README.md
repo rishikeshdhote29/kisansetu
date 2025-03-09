@@ -218,6 +218,10 @@ We welcome contributions to improve Kisansetu! To contribute:
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Create a new Pull Request.
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+developed by teamlimitless
+Rishikesh Dhote https://github.com/rishikeshdhote29
+surabh maurya  https://github.com/saurabhmourya7294
+Vishu mishra  https://github.com/mishravishu741
+Ritik chiraman https://github.com/ritik-chiraman
+
