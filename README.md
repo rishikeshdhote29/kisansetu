@@ -52,7 +52,7 @@ Simplified User Experience: Farmers and buyers, many of whom are not well-versed
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/kisansetu.git
+   git clone https://github.com/rishikeshdhote29/kisansetu.git
    cd kisansetu
    ```
 
